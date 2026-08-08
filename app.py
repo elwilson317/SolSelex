@@ -11,61 +11,60 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("☀️ SolSelex")
-st.subheader("AI-Powered Solar Farm Site Selection")
+st.markdown(
+    """
+    # ☀️ SolSelex
+
+    ### AI-Powered Solar Farm Site Selection & Land Suitability Analysis
+
+    Upload a satellite image and receive an AI-powered engineering assessment
+    for solar farm feasibility.
+    """
+)
+
+st.markdown("---")
 
 uploaded_file = st.file_uploader(
-    "Upload a satellite image",
+    "📤 Upload Satellite Image",
     type=["jpg", "jpeg", "png"]
 )
 
 if uploaded_file is not None:
 
-    st.image(uploaded_file, caption="Uploaded Image", width=350)
+    left, right = st.columns([1, 1])
 
     with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp_file:
         temp_file.write(uploaded_file.getbuffer())
         temp_path = temp_file.name
 
     result = predict_image(temp_path)
-
     recommendation = get_recommendation(result["class"])
+
+    with left:
+        st.image(
+            uploaded_file,
+            caption="Uploaded Image",
+            use_container_width=True
+        )
+
+    with right:
+        st.subheader("Prediction")
+
+        st.metric("Land Type", result["class"])
+        st.metric("Confidence", f"{result['confidence']*100:.2f}%")
+        st.metric("Solar Suitability Score", recommendation["score"])
+
+        st.success(recommendation["recommendation"])
+        st.info(recommendation["reason"])
 
     st.divider()
 
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.metric(
-            "Predicted Land Type",
-            result["class"]
-        )
-
-        st.metric(
-            "Confidence",
-            f"{result['confidence']*100:.2f}%"
-        )
-
-    with col2:
-
-        st.metric(
-            "Solar Suitability Score",
-            recommendation["score"]
-        )
-
-        st.metric(
-            "Recommendation",
-            recommendation["recommendation"]
-        )
-
-    st.subheader("Top Predictions")
+    st.subheader("📊 Top Predictions")
 
     for pred in result["top_predictions"]:
-
         st.progress(pred["confidence"])
-
         st.write(
-            f"{pred['class']} — {pred['confidence']*100:.2f}%"
+            f"**{pred['class']}** — {pred['confidence']*100:.2f}%"
         )
 
     os.remove(temp_path)
