@@ -1,0 +1,121 @@
+{
+    "Pasture": {
+      "score": 92,
+      "recommendation": "Highly Suitable",
+      "reason": "Large open terrain with minimal shading.",
+      "capacity": "5–10 MW",
+      "generation": "8.4 GWh/year",
+      "co2": "5,900 tonnes/year",
+      "difficulty": "Low",
+      "environment": "Low",
+      "access": "High"
+    },
+  
+    "Forest": {
+      "score": 15,
+      "recommendation": "Unsuitable",
+      "reason": "Dense vegetation causes shading and environmental concerns.",
+      "capacity": "0 MW",
+      "generation": "Not Recommended",
+      "co2": "N/A",
+      "difficulty": "Very High",
+      "environment": "Very High",
+      "access": "Low"
+    },
+  
+    "AnnualCrop": {
+      "score": 70,
+      "recommendation": "Moderately Suitable",
+      "reason": "Flat agricultural land but may compete with farming.",
+      "capacity": "2–5 MW",
+      "generation": "4.5 GWh/year",
+      "co2": "3,000 tonnes/year",
+      "difficulty": "Medium",
+      "environment": "Medium",
+      "access": "High"
+    },
+  
+    "HerbaceousVegetation": {
+      "score": 95,
+      "recommendation": "Highly Suitable",
+      "reason": "Open vegetation with minimal shading.",
+      "capacity": "6–12 MW",
+      "generation": "9.8 GWh/year",
+      "co2": "6,700 tonnes/year",
+      "difficulty": "Low",
+      "environment": "Low",
+      "access": "High"
+    },
+  
+    "Highway": {
+      "score": 20,
+      "recommendation": "Unsuitable",
+      "reason": "Transportation corridor.",
+      "capacity": "0 MW",
+      "generation": "Not Recommended",
+      "co2": "N/A",
+      "difficulty": "Very High",
+      "environment": "Low",
+      "access": "High"
+    },
+  
+    "Industrial": {
+      "score": 60,
+      "recommendation": "Conditionally Suitable",
+      "reason": "Potential rooftop or brownfield installations.",
+      "capacity": "3–6 MW",
+      "generation": "5.2 GWh/year",
+      "co2": "3,800 tonnes/year",
+      "difficulty": "Medium",
+      "environment": "Low",
+      "access": "High"
+    },
+  
+    "PermanentCrop": {
+      "score": 45,
+      "recommendation": "Low Suitability",
+      "reason": "Avoid disturbing long-term agricultural land.",
+      "capacity": "1–3 MW",
+      "generation": "2.8 GWh/year",
+      "co2": "1,900 tonnes/year",
+      "difficulty": "Medium",
+      "environment": "High",
+      "access": "Medium"
+    },
+  
+    "Residential": {
+      "score": 25,
+      "recommendation": "Unsuitable",
+      "reason": "Dense residential development.",
+      "capacity": "Small Rooftop",
+      "generation": "Limited",
+      "co2": "Variable",
+      "difficulty": "High",
+      "environment": "Low",
+      "access": "Medium"
+    },
+  
+    "River": {
+      "score": 0,
+      "recommendation": "Unsuitable",
+      "reason": "Water body.",
+      "capacity": "0 MW",
+      "generation": "Not Recommended",
+      "co2": "N/A",
+      "difficulty": "Impossible",
+      "environment": "High",
+      "access": "Low"
+    },
+  
+    "SeaLake": {
+      "score": 0,
+      "recommendation": "Unsuitable",
+      "reason": "Water body.",
+      "capacity": "0 MW",
+      "generation": "Not Recommended",
+      "co2": "N/A",
+      "difficulty": "Impossible",
+      "environment": "High",
+      "access": "Low"
+    }
+  }
